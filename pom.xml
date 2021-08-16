@@ -16,6 +16,8 @@
     <properties>
         <java.version>1.8</java.version>
         <mybatis-plus.version>3.3.0</mybatis-plus.version>
+        <streamex.version>0.7.2</streamex.version>
+        <guava.version>28.2-jre</guava.version>
     </properties>
     <dependencies>
         <dependency>
@@ -49,6 +51,16 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>one.util</groupId>
+            <artifactId>streamex</artifactId>
+            <version>${streamex.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
