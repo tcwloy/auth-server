@@ -14,6 +14,14 @@ public class UserAuthorityInfo {
      */
     private Long userId;
     /**
+     * 用户姓名
+     */
+    private String userName;
+    /**
+     * 部门id
+     */
+    private Long deptId;
+    /**
      * 角色id集合
      */
     private List<Long> roleIds;

@@ -3,10 +3,12 @@ package com.github.tcwloy.auth.service.impl;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.github.tcwloy.auth.model.pojo.UserAuthorityInfo;
 import com.github.tcwloy.auth.service.IUserAuthCache;
+import com.github.tcwloy.auth.service.IUserService;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
 import java.util.Optional;
@@ -18,7 +20,8 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class UserCacheImpl implements IUserAuthCache {
     private LoadingCache<String, Optional<UserAuthorityInfo>> userInfoCache;
-
+    @Autowired
+    private IUserService userService;
 
     @PostConstruct
     public void init() {
