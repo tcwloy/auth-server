@@ -1,9 +1,9 @@
 package com.github.tcwloy.auth.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.tcwloy.auth.entity.User;
 import com.github.tcwloy.auth.mapper.UserMapper;
 import com.github.tcwloy.auth.service.IUserService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**

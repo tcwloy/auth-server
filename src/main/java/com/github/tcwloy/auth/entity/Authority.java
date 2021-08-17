@@ -1,10 +1,11 @@
 package com.github.tcwloy.auth.entity;
 
-import java.time.LocalDateTime;
-import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -20,6 +21,11 @@ import lombok.experimental.Accessors;
 public class Authority implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    /**
+     * 主键
+     */
+    private Long id;
 
     /**
      * 权限名称

@@ -1,5 +1,6 @@
 package com.github.tcwloy.auth.model.pojo;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.List;
  * 用户权限模型
  */
 @Data
+@Builder
 public class UserAuthorityInfo {
     /**
      * 用户id

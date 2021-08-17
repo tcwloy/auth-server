@@ -14,7 +14,8 @@ CREATE TABLE `authority` (
                              `is_delete` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否删除',
                              `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
                              `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-                             PRIMARY KEY (`id`)
+                             PRIMARY KEY (`id`),
+                             KEY `ix_code`(`code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -59,7 +60,7 @@ CREATE TABLE `role_authority_rel` (
                                       `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
                                       `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
                                       PRIMARY KEY (`id`),
-                                      KEY `ix_role` (`role_id`),
+                                      KEY `ix_role_authority`(`role_id`, `authority_id`),
                                       KEY `ix_authority` (`authority_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -109,7 +110,7 @@ CREATE TABLE `user_role_rel` (
                                  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
                                  `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
                                  PRIMARY KEY (`id`),
-                                 KEY `ix_user` (`user_id`),
+                                 KEY `ix_user_role`(`user_id`, `role_id`) ,
                                  KEY `ix_role` (`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
